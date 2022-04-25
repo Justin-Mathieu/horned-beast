@@ -4,6 +4,7 @@ import './App.css';
 import Header from './Header';
 import Main from './Main';
 import Footer from './footer';
+// forget to switch to new branch...
 
 class App extends React.Component {
   render() {

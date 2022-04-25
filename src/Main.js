@@ -3,7 +3,7 @@ import Beast from './beast';
 import image1 from './image1.png';
 import image2 from './image2.jpg';
 import image3 from './image3.jpg';
-
+// forget to switch to new branch...
 class Main extends React.Component{
     render() {
         return (
