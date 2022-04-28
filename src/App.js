@@ -4,6 +4,7 @@ import './App.css';
 import Header from './Header';
 import Main from './Main';
 import Footer from './footer';
+import images from './data.json';
 // forget to switch to new branch...
 
 class App extends React.Component {
@@ -11,7 +12,7 @@ class App extends React.Component {
     return (
       <div className='App'>
         <Header />
-        <Main />
+        <Main images={images} />
         <Footer/>
       </div>
     );
