@@ -5,6 +5,8 @@ import Header from './Header';
 import Main from './Main';
 import Footer from './footer';
 import images from './data.json';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 // forget to switch to new branch...
 
 class App extends React.Component {
