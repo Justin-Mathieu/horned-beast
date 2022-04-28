@@ -1,13 +1,35 @@
 import React from 'react';
+import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
 // forget to switch to new branch...
 
 class Beast extends React.Component {
+  constructor(props){
+    super(props);
+    this.state ={
+      clicks: 0
+
+    }
+  }
+  clickHandler = () =>{
+    this.setState({clicks: this.state.clicks + 1});
+  }
   render() {
     return (
       <>
-      <h3>{this.props.name}</h3>
-      <img src ={this.props.src} alt = 'horned thing'/>
-      <p>{this.props.description}</p>
+      <Card style={{ width: '50%' }}>
+  <Card.Img variant="top" src= {this.props.src} alt = {this.props.alt} />
+  <Card.Body>
+    <Card.Title>{this.props.name}</Card.Title>
+    <Card.Text>
+    {this.props.description}
+   
+    </Card.Text>
+    <Button variant="primary" onClick={this.clickHandler} >Vote!</Button> 💟{this.state.clicks}
+  
+  </Card.Body>
+</Card>
+      
       </>
     )
   }
