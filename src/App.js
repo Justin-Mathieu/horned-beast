@@ -5,10 +5,9 @@ import Header from './Header';
 import Main from './Main';
 import Footer from './footer';
 import BeastData from './data.json';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import ImageModal from './imageModal';
 
-// forget to switch to new branch...
+
+import images from './data.json';
 
 class App extends React.Component {
   constructor(props) {
@@ -22,6 +21,7 @@ class App extends React.Component {
     this.setState({ showModal: false });
 
   }
+  
   handleShow = () => {
     this.setState({ showModal: true })
   }
