@@ -1,7 +1,6 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
-import SelectedBeast from './SelectedBeast';
 // forget to switch to new branch...
 
 class Beast extends React.Component {
