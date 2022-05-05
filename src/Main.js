@@ -7,11 +7,13 @@ class Main extends React.Component {
             <>
                 {this.props.beastData.map(beast => (
                     <Beast
+                        key={beast._id}
                         title={beast.title}
                         src={beast.image_url}
                         description={beast.description}
                         keyword={beast.keyword}
                         horns={beast.horns}
+                        handleOpenModal={this.props.handleOpenModal}
                     />
                 ))}
 

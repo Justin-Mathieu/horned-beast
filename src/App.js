@@ -4,33 +4,34 @@ import './App.css';
 import Header from './Header';
 import Main from './Main';
 import Footer from './footer';
-import BeastData from './data.json';
+import beastData from './data.json';
+import SelectedBeast from './SelectedBeast';
 
-
-import images from './data.json';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      showModal: false
+      showModal: false,
+      selectedBeast: {}
 
     }
   }
-  handleClose = () => {
+  handleCloseModal = () => {
     this.setState({ showModal: false });
 
-  }
-  
-  handleShow = () => {
-    this.setState({ showModal: true })
-  }
+  };
+
+  handleOpenModal = (beastName) => {
+    let selectedBeast = beastData.find(beast => beast.title === beastName);
+    this.setState({ showModal: true, selectedBeast });
+  };
   render() {
     return (
       <div className='App'>
         <Header />
-        <Main beastData={BeastData} handleshow={this.handleShow} />
-        <ImageModal showModal={this.state.showModal} handleClose={this.handleClose} />
+        <Main beastData={beastData} handleOpenModal={this.handleOpenModal} />
+        <SelectedBeast show={this.state.showModal} handleClose={this.handleCloseModal} selectedBeast={this.state.selectedBeast} />
         <Footer />
       </div>
     );
