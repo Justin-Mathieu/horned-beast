@@ -18,12 +18,10 @@ class App extends React.Component {
 
     }
   }
-  // handleFormClick = (event) => {
-  //   event.preventDefault();
-  //   if (event.target.value === "one")
-  //     let newBeastData = beastData.filter(obj => obj.horns === 1)
+  handleFormClick = (theNewBeasts) => {
+    this.setState({ beastData: theNewBeasts });
 
-  // }
+  }
   handleCloseModal = () => {
     this.setState({ showModal: false });
 
@@ -37,7 +35,7 @@ class App extends React.Component {
     return (
       <div className='App'>
         <Header />
-        <FormOfHorns />
+        <FormOfHorns beastData={beastData} handleFormClick={this.handleFormClick} />
         <Main beastData={this.state.beastData} handleOpenModal={this.handleOpenModal} />
         <SelectedBeast show={this.state.showModal} handleClose={this.handleCloseModal} selectedBeast={this.state.selectedBeast} />
         <Footer />
